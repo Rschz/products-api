@@ -2,30 +2,33 @@ import { ObjectType, Field, Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class Product {
-  @Field(() => Int)
+  @Field(() => Int, { name: 'id' })
   id: number;
 
   @Field()
   category: string;
 
-  @Field({ nullable: true })
-  brand?: string;
+  @Field({ name: 'description' })
+  description: string;
+
+  @Field({ name: 'brand' })
+  brand: string;
 }
 
 @ObjectType()
 export class Car extends Product {
-  @Field({ nullable: true })
+  @Field()
   model?: string;
 
-  @Field(() => Int, { nullable: true })
+  @Field(() => Int)
   year?: number;
 }
 
 @ObjectType()
 export class Clothing extends Product {
-  @Field({ nullable: true })
+  @Field({ name: 'collection' })
   collection?: string;
 
-  @Field(() => Int, { nullable: true })
+  @Field(() => Int, { defaultValue: 0, name: 'size' })
   size?: number;
 }

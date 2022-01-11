@@ -5,27 +5,30 @@
 type Product {
   id: Int!
   category: String!
-  brand: String
+  description: String!
+  brand: String!
 }
 
 type Car {
   id: Int!
   category: String!
-  brand: String
-  model: String
-  year: Int
+  description: String!
+  brand: String!
+  model: String!
+  year: Int!
 }
 
 type Clothing {
   id: Int!
   category: String!
-  brand: String
-  collection: String
-  size: Int
+  description: String!
+  brand: String!
+  collection: String!
+  size: Int!
 }
 
 type Query {
-  findAll: [Product!]!
+  products: [Product!]!
   findOne(id: Int!): Clothing!
 }
 
@@ -39,6 +42,7 @@ type Mutation {
 input CreateCarInput {
   id: Int
   category: String
+  description: String
   brand: String
   model: String!
   year: Int!
@@ -47,6 +51,7 @@ input CreateCarInput {
 input UpdateCarInput {
   id: Int!
   category: String
+  description: String
   brand: String
   model: String
   year: Int
@@ -55,6 +60,7 @@ input UpdateCarInput {
 input CreateClothingInput {
   id: Int
   category: String
+  description: String
   brand: String
   collection: String
   size: Int
@@ -63,6 +69,7 @@ input CreateClothingInput {
 input UpdateClothingInput {
   id: Int!
   category: String
+  description: String
   brand: String
   collection: String
   size: Int

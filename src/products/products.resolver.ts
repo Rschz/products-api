@@ -20,7 +20,7 @@ export function BaseResolver<T extends Type<unknown>>(
   abstract class BaseResolverHost {
     abstract getService(): ProductsService<T>;
 
-    @Query((type) => [Product], { name: 'findAll' })
+    @Query((type) => [Product], { name: 'products' })
     findAll(): Product[] {
       return this.getService().findAll();
     }

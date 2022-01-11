@@ -9,6 +9,9 @@ export class CreateProductInput {
   category: string;
 
   @Field()
+  description: string;
+
+  @Field()
   brand: string;
 }
 

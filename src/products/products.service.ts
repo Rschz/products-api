@@ -7,13 +7,13 @@ export class ProductsService<T> {
   products: any[] = [
     {
       id: 1,
-      category: 'automotive',
-      brand: 'Mazda',
+      category: 'car',
+      description: 'Mazda Demio 2020',
     },
     {
       id: 2,
       category: 'clothing',
-      brand: 'Zara',
+      description: 'Zara dress',
     },
   ];
 
@@ -41,9 +41,5 @@ export class ProductsService<T> {
     this.products[itemIndex] = updateProductInput;
 
     return this.products[itemIndex];
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} product`;
   }
 }
