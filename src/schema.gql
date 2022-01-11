@@ -1,0 +1,69 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Product {
+  id: Int!
+  category: String!
+  brand: String
+}
+
+type Car {
+  id: Int!
+  category: String!
+  brand: String
+  model: String
+  year: Int
+}
+
+type Clothing {
+  id: Int!
+  category: String!
+  brand: String
+  collection: String
+  size: Int
+}
+
+type Query {
+  findAll: [Product!]!
+  findOne(id: Int!): Clothing!
+}
+
+type Mutation {
+  createCar(Car: CreateCarInput!): Car!
+  updateCar(Car: UpdateCarInput!): Car!
+  createClothing(Clothing: CreateClothingInput!): Clothing!
+  updateClothing(Clothing: UpdateClothingInput!): Clothing!
+}
+
+input CreateCarInput {
+  id: Int
+  category: String
+  brand: String
+  model: String!
+  year: Int!
+}
+
+input UpdateCarInput {
+  id: Int!
+  category: String
+  brand: String
+  model: String
+  year: Int
+}
+
+input CreateClothingInput {
+  id: Int
+  category: String
+  brand: String
+  collection: String
+  size: Int
+}
+
+input UpdateClothingInput {
+  id: Int!
+  category: String
+  brand: String
+  collection: String
+  size: Int
+}
